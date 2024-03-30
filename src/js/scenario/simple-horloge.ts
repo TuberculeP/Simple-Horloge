@@ -108,7 +108,10 @@ export default class SimpleHorlogeScenario extends Scene {
     const hour = new Date().getHours() % 12;
     this.romanNumbers.forEach((number, i) => {
       number.radius = this.params["radius"] * 1.15;
-      number.draw(this.context as CanvasRenderingContext2D, i - 1 === hour);
+      number.accentColor = `rgba(${
+        this.params["color"].join(",") ?? "255,0,0,1"
+      })`;
+      number.draw(this.context as CanvasRenderingContext2D, i === hour);
     });
 
     //cursors
