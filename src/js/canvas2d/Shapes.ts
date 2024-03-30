@@ -52,7 +52,7 @@ export class RomanNumber {
     public value: string
   ) {}
 
-  draw(ctx: CanvasRenderingContext2D) {
+  draw(ctx: CanvasRenderingContext2D, isHour: boolean = false) {
     const length = this.value.length;
     const currentAngle = -Math.PI / 2 + deg2rad(+this.angle);
 
@@ -70,6 +70,7 @@ export class RomanNumber {
         const y = Math.sin(currentAngle) * this.radius + this.y + this.height / 2;
         //draw letter
         ctx.beginPath();
+        isHour ? (ctx.strokeStyle = "red") : (ctx.strokeStyle = "white");
         if (v === "x") {
           ctx.moveTo(x, y);
           ctx.lineTo(x + width, y - height);

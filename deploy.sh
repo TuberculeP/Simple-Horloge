@@ -17,6 +17,6 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push --force git@github.com:TuberculeP/Spinnnn.git master:gh-pages
+git push --force git@github.com:TuberculeP/Simple-Horloge.git master:gh-pages
 
 cd -
